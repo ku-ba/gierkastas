@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,10 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_player)){
-    x = obj_player.x;
-    y = obj_player.y;
-}
+            <string>//init player stats
+maxhp = 7;
+hp = maxhp;
+maxstamina = 10;
+stamina = maxstamina;
+lvl = 1;
+xp = 0;
+maxxp = 3;
+atkpow = 1;//attack power
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///stamina regen
 </string>
           </argument>
         </arguments>
@@ -51,11 +79,37 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///follow player
-if(instance_exists(obj_player)){
-    x += (obj_player.x - x) * 0.1;
-    y += (obj_player.y - y) * 0.1;
-}
+            <string>if(hp&lt;0)hp=0;
+
+//stamina reg
+if(stamina &lt; maxstamina &amp;&amp; alarm[0]==-1) stamina++;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw stats on screen
+draw_text(32, 16, "hp: " + string(hp) + "/" + string(maxhp));
+draw_text(32, 32, "stamina: " + string(stamina) + "/" + string(maxstamina));
+draw_text(32, 48, "attack: " + string(atkpow));
+draw_text(32, 64, "level: " + string(lvl));
 </string>
           </argument>
         </arguments>

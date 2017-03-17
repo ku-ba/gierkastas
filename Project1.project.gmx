@@ -6,28 +6,66 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_player_down</sprite>
-    <sprite>sprites\spr_player_left</sprite>
-    <sprite>sprites\spr_player_right</sprite>
-    <sprite>sprites\spr_player_up</sprite>
-    <sprite>sprites\spr_player_shadow</sprite>
+    <sprites name="Player">
+      <sprite>sprites\spr_player_up</sprite>
+      <sprite>sprites\spr_player_right</sprite>
+      <sprite>sprites\spr_player_down</sprite>
+      <sprite>sprites\spr_player_left</sprite>
+      <sprite>sprites\spr_player_attack_up</sprite>
+      <sprite>sprites\spr_player_attack_right</sprite>
+      <sprite>sprites\spr_player_attack_down</sprite>
+      <sprite>sprites\spr_player_attack_left</sprite>
+      <sprite>sprites\spr_player_shadow</sprite>
+    </sprites>
+    <sprite>sprites\spr_enemy_glut</sprite>
+    <sprite>sprites\grass</sprite>
+    <sprite>sprites\spr_damage</sprite>
+    <sprite>sprites\spr_xp</sprite>
+    <sprite>sprites\spr_door</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_get_input.gml</script>
-    <script>scripts\scr_move_state.gml</script>
-    <script>scripts\scr_dash_state.gml</script>
+    <scripts name="Player States">
+      <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_attack_state.gml</script>
+      <script>scripts\scr_dash_state.gml</script>
+    </scripts>
+    <scripts name="Helper">
+      <script>scripts\scr_get_face.gml</script>
+      <script>scripts\scr_get_input.gml</script>
+    </scripts>
+    <scripts name="Enemy">
+      <scripts name="Enemy Helpers">
+        <script>scripts\scr_enemy_choose_next_state.gml</script>
+        <script>scripts\scr_check_for_player.gml</script>
+      </scripts>
+      <script>scripts\scr_enemy_chase_state.gml</script>
+      <script>scripts\scr_enemy_wander_state.gml</script>
+      <script>scripts\scr_enemy_idle_state.gml</script>
+      <script>scripts\scr_enemy_stall_state.gml</script>
+    </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_view</object>
+    <object>objects\obj_dash_effect</object>
+    <object>objects\obj_enemy_glut</object>
+    <object>objects\obj_lifeform</object>
+    <object>objects\obj_grass</object>
+    <object>objects\obj_damage</object>
+    <object>objects\obj_player_stats</object>
+    <object>objects\obj_xp</object>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_1</room>
+    <room>rooms\rm_2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
