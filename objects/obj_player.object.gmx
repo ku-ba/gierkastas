@@ -170,7 +170,7 @@ with(obj_player_stats){
         lvl++;
         hp++;
         stamina=maxstamina;
-        atkpow++;
+        atkpow+=0.2;
         xp=xp-maxxp;
         maxxp+=3;
     }

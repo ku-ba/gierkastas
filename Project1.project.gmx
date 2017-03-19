@@ -30,8 +30,12 @@
     <sprite>sprites\spr_chinlin_stand_right</sprite>
     <sprite>sprites\spr_chinlin_stand_up</sprite>
     <sprite>sprites\spr_chinlin_run_down</sprite>
+    <sprite>sprites\spr_final_wall</sprite>
+    <sprite>sprites\spr_final_tile</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Player States">
@@ -61,21 +65,26 @@
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_final_wall</object>
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_glut</object>
     <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_lifeform</object>
-    <object>objects\obj_grass</object>
+    <object>objects\obj_bg_2</object>
     <object>objects\obj_sand</object>
+    <object>objects\obj_final_tile</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_xp</object>
     <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\final</room>
+    <room>rooms\lvl2</room>
     <room>rooms\lvl1</room>
     <room>rooms\rm_12</room>
+    <room>rooms\room4</room>
     <room>rooms\rm_2</room>
   </rooms>
   <help>
