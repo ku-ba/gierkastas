@@ -1,44 +1,27 @@
 //attack
 image_speed = 0.5;
 
-switch(sprite_index){
-    case spr_player_up:
-        sprite_index = spr_player_attack_up;
-        break;
-        
-    case spr_player_right:
-        sprite_index = spr_player_attack_right;
-        break;
-        
-    case spr_player_down:
-        sprite_index = spr_player_attack_down;
-        break;
-        
-    case spr_player_left:
-        sprite_index = spr_player_attack_left;
-        break;
-
-}
+movement = ATTACK;
 
 if(image_index >= 3 and attacked == false){
     var xx = x;
     var yy = y;
     
-    switch(sprite_index){
-        case spr_player_attack_up:
+    switch(face){
+        case UP:
             yy -= 14;
             break;
             
-        case spr_player_attack_right:
+        case RIGHT:
             xx += 12;
             yy += 2;
             break;
             
-        case spr_player_attack_down:
+        case DOWN:
             yy += 14;
             break;
             
-        case spr_player_attack_left:
+        case LEFT:
             xx -= 12;
             yy += 2;
             break;

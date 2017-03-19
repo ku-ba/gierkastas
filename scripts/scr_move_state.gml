@@ -1,5 +1,5 @@
 scr_get_input();
-
+movement = MOVE;
 if(dash_key and obj_player_stats.stamina>=3){
         obj_player_stats.stamina-=3;
         state = scr_dash_state;
@@ -19,7 +19,7 @@ if(x_axis == 0 and y_axis == 0){
     len = 0;
 }else{
     len = spd;
-    scr_get_face();
+    scr_get_face(dir);
 }
 // set speed
 hspd = lengthdir_x(len, dir);
@@ -33,24 +33,5 @@ phy_position_y += vspd;
 image_speed = 0.2;
 if(len == 0) image_index = 0;
 
-
-switch(face){
-    case RIGHT:
-        sprite_index = spr_player_right;
-        break;
-    case UP:
-        sprite_index = spr_player_up;
-        break;
-    case LEFT:
-        sprite_index = spr_player_left;
-        break;
-    case DOWN:
-        sprite_index = spr_player_down;
-        break;
-}
-/*if(vspd > 0) sprite_index = spr_player_down;
-else if(vspd < 0)sprite_index = spr_player_up;
-
-if(hspd > 0) sprite_index = spr_player_right;
-else if(hspd < 0) sprite_index = spr_player_left;*/
+//change sprite
 

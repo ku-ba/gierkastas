@@ -23,6 +23,13 @@
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_xp</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_sand</sprite>
+    <sprite>sprites\spr_chinlin_run_right</sprite>
+    <sprite>sprites\spr_chinlin_run_up</sprite>
+    <sprite>sprites\spr_chinlin_stand_down</sprite>
+    <sprite>sprites\spr_chinlin_stand_right</sprite>
+    <sprite>sprites\spr_chinlin_stand_up</sprite>
+    <sprite>sprites\spr_chinlin_run_down</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -40,6 +47,7 @@
       <scripts name="Enemy Helpers">
         <script>scripts\scr_enemy_choose_next_state.gml</script>
         <script>scripts\scr_check_for_player.gml</script>
+        <script>scripts\scr_move_axis.gml</script>
       </scripts>
       <script>scripts\scr_enemy_chase_state.gml</script>
       <script>scripts\scr_enemy_wander_state.gml</script>
@@ -56,15 +64,18 @@
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_glut</object>
+    <object>objects\obj_enemy_chinlin</object>
     <object>objects\obj_lifeform</object>
     <object>objects\obj_grass</object>
+    <object>objects\obj_sand</object>
     <object>objects\obj_damage</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_xp</object>
     <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_1</room>
+    <room>rooms\lvl1</room>
+    <room>rooms\rm_12</room>
     <room>rooms\rm_2</room>
   </rooms>
   <help>

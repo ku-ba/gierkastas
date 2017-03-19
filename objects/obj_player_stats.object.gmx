@@ -28,7 +28,7 @@
             <string>//init player stats
 maxhp = 7;
 hp = maxhp;
-maxstamina = 10;
+maxstamina = 1033333;
 stamina = maxstamina;
 lvl = 1;
 xp = 0;
